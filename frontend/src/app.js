@@ -1,34 +1,50 @@
-const API = "http://BACKEND_SERVICE/api/products";
+const products = [
+  { id: 1, name: "Laptop", price: 55000 },
+  { id: 2, name: "Mobile", price: 25000 },
+  { id: 3, name: "Headphones", price: 3000 }
+];
+
+let cart = [];
+
+function showPage(pageId) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.getElementById(pageId).classList.add("active");
+}
 
 function loadProducts() {
-  fetch(API)
-    .then(res => res.json())
-    .then(data => {
-      list.innerHTML = "";
-      data.forEach(p => {
-        list.innerHTML += `
-          <li>
-            ${p.name} - ₹${p.price}
-            <button onclick="deleteProduct(${p.id})">❌</button>
-          </li>`;
-      });
-    });
+  const list = document.getElementById("productList");
+  list.innerHTML = "";
+  products.forEach(p => {
+    list.innerHTML += `
+      <div class="card">
+        <h3>${p.name}</h3>
+        <p>₹${p.price}</p>
+        <button onclick="addToCart(${p.id})">Add to Cart</button>
+      </div>
+    `;
+  });
 }
 
-function addProduct() {
-  fetch(API, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: name.value,
-      price: price.value
-    })
-  }).then(loadProducts);
+function addToCart(id) {
+  const product = products.find(p => p.id === id);
+  cart.push(product);
+  updateCart();
 }
 
-function deleteProduct(id) {
-  fetch(`${API}/${id}`, { method: "DELETE" })
-    .then(loadProducts);
+function updateCart() {
+  document.getElementById("cartCount").innerText = cart.length;
+  const list = document.getElementById("cartList");
+  list.innerHTML = "";
+  cart.forEach(p => {
+    list.innerHTML += `<li>${p.name} - ₹${p.price}</li>`;
+  });
+}
+
+function placeOrder() {
+  alert("✅ Order placed successfully!");
+  cart = [];
+  updateCart();
+  showPage("orders");
 }
 
 loadProducts();

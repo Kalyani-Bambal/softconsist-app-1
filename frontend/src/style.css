@@ -1,38 +1,71 @@
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
   background: #f4f6f8;
-  padding: 20px;
 }
 
-h1 {
-  text-align: center;
-}
-
-.card {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-input {
-  padding: 8px;
-  margin: 5px;
-}
-
-button {
-  padding: 8px 12px;
-  background: #007bff;
+.navbar {
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
   color: white;
-  border: none;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.navbar li {
   cursor: pointer;
 }
 
-li {
+.page {
+  display: none;
+  padding: 30px;
+}
+
+.page.active {
+  display: block;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.card {
   background: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card button {
+  background: #ff6a00;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+input {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  width: 250px;
+}
+
+button {
   padding: 10px;
-  margin: 5px;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
+}
+
+.link {
+  color: blue;
+  cursor: pointer;
 }
 
 

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: softconsist-frontend
+  labels:
+    app: softconsist-frontend
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: softconsist-frontend
+
+  template:
+    metadata:
+      labels:
+        app: softconsist-frontend
+    spec:
+      containers:
+        - name: softconsist-frontend
+          image: 041326371952.dkr.ecr.ap-south-1.amazonaws.com/softconsist-frontend:26c7687
+          ports:
+            - containerPort: 80
+              protocol: TCP
+

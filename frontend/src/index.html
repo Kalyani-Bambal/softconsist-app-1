@@ -1,59 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>SoftConsist Product Store</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <title>SoftConsist Shop</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <h1>🛒 SoftConsist Product Store</h1>
-    <p>Manage your products with ease</p>
-  </header>
+<nav class="navbar">
+  <h2>🛍 SoftConsist</h2>
+  <ul>
+    <li onclick="showPage('home')">Home</li>
+    <li onclick="showPage('products')">Products</li>
+    <li onclick="showPage('cart')">Cart (<span id="cartCount">0</span>)</li>
+    <li onclick="showPage('orders')">Orders</li>
+    <li onclick="showPage('career')">Career</li>
+    <li onclick="showPage('login')">Login</li>
+  </ul>
+</nav>
 
-  <!-- Main Container -->
-  <main class="container">
+<!-- HOME -->
+<section id="home" class="page active">
+  <h1>Welcome to SoftConsist Store 🚀</h1>
+  <p>Best products • Fast delivery • Trusted by thousands</p>
+</section>
 
-    <!-- Add Product Card -->
-    <section class="card">
-      <h2>Add New Product</h2>
+<!-- PRODUCTS -->
+<section id="products" class="page">
+  <h1>🛒 Products</h1>
+  <div class="products" id="productList"></div>
+</section>
 
-      <div class="form-group">
-        <input id="name" type="text" placeholder="Product Name" />
-        <input id="price" type="number" placeholder="Price (₹)" />
-      </div>
+<!-- CART -->
+<section id="cart" class="page">
+  <h1>🧺 Your Cart</h1>
+  <ul id="cartList"></ul>
+  <button onclick="placeOrder()">Place Order</button>
+</section>
 
-      <button class="primary-btn" onclick="addProduct()">➕ Add Product</button>
-    </section>
+<!-- ORDERS -->
+<section id="orders" class="page">
+  <h1>📦 Orders</h1>
+  <p>Your recent orders will appear here.</p>
+</section>
 
-    <!-- Product List -->
-    <section class="card">
-      <h2>Product List</h2>
-      <ul id="list" class="product-list">
-        <!-- Products will load here -->
-      </ul>
-    </section>
+<!-- LOGIN -->
+<section id="login" class="page">
+  <h1>🔐 Login</h1>
+  <input placeholder="Email">
+  <input placeholder="Password" type="password">
+  <button>Login</button>
+  <p onclick="showPage('signup')" class="link">New user? Signup</p>
+</section>
 
-  </main>
+<!-- SIGNUP -->
+<section id="signup" class="page">
+  <h1>📝 Signup</h1>
+  <input placeholder="Name">
+  <input placeholder="Email">
+  <input placeholder="Password" type="password">
+  <button>Create Account</button>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 SoftConsist | Built with ❤️ by DevOps Team</p>
-  </footer>
+<!-- CAREER -->
+<section id="career" class="page">
+  <h1>💼 Careers</h1>
+  <p>Join SoftConsist and build scalable products!</p>
+</section>
 
-  <!-- JS -->
-  <script src="app.js"></script>
-
+<script src="app.js"></script>
 </body>
 </html>
+
 
 
