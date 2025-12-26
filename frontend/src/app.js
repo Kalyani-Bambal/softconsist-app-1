@@ -1,7 +1,28 @@
 const products = [
-  { id: 1, name: "Laptop", price: 55000, img: "https://via.placeholder.com/150" },
-  { id: 2, name: "Smartphone", price: 25000, img: "https://via.placeholder.com/150" },
-  { id: 3, name: "Headphones", price: 3000, img: "https://via.placeholder.com/150" }
+  {
+    id: 1,
+    name: "Laptop",
+    price: 54999,
+    img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+  },
+  {
+    id: 2,
+    name: "Smartphone",
+    price: 24999,
+    img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
+  },
+  {
+    id: 3,
+    name: "Headphones",
+    price: 2999,
+    img: "https://images.unsplash.com/photo-1518444028785-8f4c6b0e0b26"
+  },
+  {
+    id: 4,
+    name: "Smart Watch",
+    price: 4999,
+    img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+  }
 ];
 
 let cart = [];
@@ -32,10 +53,6 @@ function addToCart(id) {
   renderCart();
 }
 
-function toggleCart() {
-  document.getElementById("cart").classList.toggle("open");
-}
-
 function renderCart() {
   const list = document.getElementById("cartItems");
   list.innerHTML = "";
@@ -49,23 +66,8 @@ function placeOrder() {
   cart = [];
   renderCart();
   document.getElementById("cartCount").innerText = 0;
-  toggleCart();
   showPage("orders");
 }
 
-function openLogin() {
-  document.getElementById("loginModal").style.display = "block";
-}
-
-function openSignup() {
-  closeModal();
-  document.getElementById("signupModal").style.display = "block";
-}
-
-function closeModal() {
-  document.querySelectorAll(".modal").forEach(m => m.style.display = "none");
-}
-
 loadProducts();
-
 

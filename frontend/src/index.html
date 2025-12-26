@@ -6,83 +6,64 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
-  <div class="logo">🛍 SoftConsist</div>
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">🛒 SoftConsist</div>
   <nav>
-    <span onclick="showPage('home')">Home</span>
-    <span onclick="showPage('products')">Products</span>
-    <span onclick="showPage('orders')">Orders</span>
-    <span onclick="showPage('career')">Career</span>
-    <span onclick="toggleCart()">🛒 Cart (<b id="cartCount">0</b>)</span>
-    <button onclick="openLogin()">Login</button>
+    <span onclick="showPage('home')">🏠 Home</span>
+    <span onclick="showPage('products')">🛍 Products</span>
+    <span onclick="showPage('cart')">🛒 Cart (<b id="cartCount">0</b>)</span>
+    <span onclick="showPage('orders')">📦 Orders</span>
+    <span onclick="showPage('payments')">💳 Payments</span>
+    <span onclick="showPage('login')">🔐 Login</span>
   </nav>
 </header>
 
-<!-- HOME -->
+<!-- HERO -->
 <section id="home" class="page active hero">
-  <h1>India’s Trusted Online Store</h1>
-  <p>Best Deals • Secure Payments • Fast Delivery</p>
+  <h1>India’s Most Loved Shopping Platform ❤️</h1>
+  <p>Electronics • Fashion • Home • Beauty</p>
   <button onclick="showPage('products')">Shop Now</button>
 </section>
 
 <!-- PRODUCTS -->
 <section id="products" class="page">
-  <h2>🔥 Trending Products</h2>
+  <h2>🔥 Best Deals</h2>
   <div class="product-grid" id="productList"></div>
+</section>
+
+<!-- CART -->
+<section id="cart" class="page">
+  <h2>🛒 Your Cart</h2>
+  <ul id="cartItems"></ul>
+  <button onclick="placeOrder()">Place Order</button>
 </section>
 
 <!-- ORDERS -->
 <section id="orders" class="page">
   <h2>📦 Your Orders</h2>
-  <p>No orders yet. Start shopping!</p>
+  <p>No orders yet.</p>
 </section>
 
-<!-- CAREER -->
-<section id="career" class="page">
-  <h2>💼 Careers at SoftConsist</h2>
-  <p>We’re hiring frontend, backend & DevOps engineers.</p>
+<!-- PAYMENTS -->
+<section id="payments" class="page">
+  <h2>💳 Payment Options</h2>
   <ul>
-    <li>✔ Competitive salary</li>
-    <li>✔ Remote-friendly</li>
-    <li>✔ Work on scalable systems</li>
+    <li>✔ Credit / Debit Card</li>
+    <li>✔ UPI / GPay / PhonePe</li>
+    <li>✔ Cash on Delivery</li>
   </ul>
 </section>
 
-<!-- CART DRAWER -->
-<div id="cart" class="cart">
-  <h3>Your Cart</h3>
-  <ul id="cartItems"></ul>
-  <button onclick="placeOrder()">Place Order</button>
-</div>
-
-<!-- LOGIN MODAL -->
-<div id="loginModal" class="modal">
-  <div class="modal-box">
-    <h3>Login</h3>
-    <input placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button>Login</button>
-    <p onclick="openSignup()">New user? Signup</p>
-    <span class="close" onclick="closeModal()">✖</span>
-  </div>
-</div>
-
-<!-- SIGNUP MODAL -->
-<div id="signupModal" class="modal">
-  <div class="modal-box">
-    <h3>Create Account</h3>
-    <input placeholder="Name">
-    <input placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button>Signup</button>
-    <span class="close" onclick="closeModal()">✖</span>
-  </div>
-</div>
+<!-- LOGIN -->
+<section id="login" class="page">
+  <h2>🔐 Login</h2>
+  <input placeholder="Email">
+  <input type="password" placeholder="Password">
+  <button>Login</button>
+</section>
 
 <script src="app.js"></script>
 </body>
 </html>
-
-
 
