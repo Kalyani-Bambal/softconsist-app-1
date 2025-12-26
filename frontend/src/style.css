@@ -1,10 +1,17 @@
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   background: #f4f6f8;
-  padding: 30px;
+  padding: 20px;
 }
 
-h1 { color: #2874f0; }
+h1 {
+  text-align: center;
+}
+
+.card {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 input {
   padding: 8px;
@@ -13,7 +20,7 @@ input {
 
 button {
   padding: 8px 12px;
-  background: #2874f0;
+  background: #007bff;
   color: white;
   border: none;
   cursor: pointer;
@@ -21,7 +28,11 @@ button {
 
 li {
   background: white;
-  margin: 8px;
   padding: 10px;
+  margin: 5px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
 }
+
 
