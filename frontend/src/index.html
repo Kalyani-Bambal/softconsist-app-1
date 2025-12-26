@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>SoftConsist – Design Gallery</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,72 +18,41 @@
   <ul class="menu">
     <li>Explore</li>
     <li>Hire Talent</li>
-    <li>Get Hired</li>
     <li>Community</li>
   </ul>
 
   <div class="auth">
-    <button class="btn-outline">Log in</button>
+    <button class="btn-outline" onclick="handleLogin()">Log in</button>
     <button class="btn-primary">Sign up</button>
   </div>
 </nav>
 
-<!-- HEADER -->
+<!-- PROFILE -->
 <section class="profile">
   <h1>SoftConsist Design Studio</h1>
   <p>Bangalore, India</p>
-  <span>Product Design · UX/UI · Branding · Motion</span>
+  <span>Web · Animation · Branding · Product Design</span>
 </section>
 
-<!-- FILTERS -->
+<!-- TABS -->
 <section class="filters">
-  <button class="active">All</button>
-  <button>Web Design</button>
-  <button>Animation</button>
-  <button>Branding</button>
-  <button>Illustration</button>
-  <button>Product Design</button>
+  <button class="tab active" data-category="all">All</button>
+  <button class="tab" data-category="web">Web Design</button>
+  <button class="tab" data-category="animation">Animation</button>
+  <button class="tab" data-category="branding">Branding</button>
+  <button class="tab" data-category="product">Product Design</button>
 </section>
 
 <!-- GRID -->
-<section class="grid">
-  <div class="card">
-    <img src="https://picsum.photos/400/300?1" />
-    <div class="overlay">
-      <h3>E-Commerce Home UI</h3>
-      <p>Modern shopping experience</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://picsum.photos/400/300?2" />
-    <div class="overlay">
-      <h3>Festival Sale Banner</h3>
-      <p>Big Billion Style Campaign</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://picsum.photos/400/300?3" />
-    <div class="overlay">
-      <h3>Mobile App UX</h3>
-      <p>Clean, Gen-Z focused UI</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://picsum.photos/400/300?4" />
-    <div class="overlay">
-      <h3>Dashboard Design</h3>
-      <p>Dark mode fintech UI</p>
-    </div>
-  </div>
-</section>
+<section class="grid"></section>
 
 <footer>
-  © 2025 SoftConsist · Design Inspired by modern marketplaces
+  © 2025 SoftConsist. Crafted with ❤️
 </footer>
 
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
 </body>
 </html>
 

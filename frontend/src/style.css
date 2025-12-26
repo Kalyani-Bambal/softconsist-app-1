@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #fafafa;
+  background: linear-gradient(180deg, #f9fbff, #eef3ff);
   color: #222;
 }
 
@@ -15,8 +15,8 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 15px 40px;
-  background: #fff;
+  padding: 16px 40px;
+  background: white;
   border-bottom: 1px solid #eee;
 }
 
@@ -29,23 +29,19 @@ body {
 .search {
   flex: 1;
   padding: 10px 14px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #ddd;
 }
 
 .menu {
   display: flex;
-  gap: 20px;
+  gap: 18px;
   list-style: none;
 }
 
 .menu li {
   cursor: pointer;
   font-weight: 500;
-}
-
-.auth button {
-  margin-left: 10px;
 }
 
 .btn-outline {
@@ -59,7 +55,7 @@ body {
 .btn-primary {
   padding: 8px 14px;
   background: #2874f0;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 8px;
 }
@@ -70,32 +66,40 @@ body {
 }
 
 .profile h1 {
-  font-size: 28px;
-  margin-bottom: 8px;
+  font-size: 30px;
 }
 
 .profile span {
   color: #666;
 }
 
-/* FILTERS */
+/* TABS */
 .filters {
+  display: flex;
+  gap: 12px;
   padding: 0 40px 20px;
 }
 
-.filters button {
-  padding: 8px 14px;
-  margin-right: 10px;
+.tab {
+  padding: 10px 18px;
   border-radius: 20px;
-  border: 1px solid #ddd;
-  background: #fff;
   cursor: pointer;
+  background: white;
+  border: 1px solid #ddd;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.filters .active {
-  background: #2874f0;
-  color: #fff;
+.tab[data-category="web"] { color: #2874f0; }
+.tab[data-category="animation"] { color: #7b2ff7; }
+.tab[data-category="branding"] { color: #ff8c00; }
+.tab[data-category="product"] { color: #28a745; }
+
+.tab.active {
+  background: linear-gradient(135deg, #2874f0, #6aa9ff);
+  color: white;
   border: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 /* GRID */
@@ -111,17 +115,16 @@ body {
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  background: #000;
+  background: black;
 }
 
 .card img {
   width: 100%;
-  display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s;
 }
 
 .card:hover img {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 .overlay {
@@ -132,17 +135,16 @@ body {
   background: linear-gradient(transparent, rgba(0,0,0,0.8));
   color: white;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: 0.3s;
 }
 
 .card:hover .overlay {
   opacity: 1;
 }
 
-/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
-  color: #888;
+  color: #777;
 }
 
