@@ -1,71 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SoftConsist Shop</title>
+  <title>SoftConsist – Online Shopping</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="navbar">
-  <h2>🛍 SoftConsist</h2>
-  <ul>
-    <li onclick="showPage('home')">Home</li>
-    <li onclick="showPage('products')">Products</li>
-    <li onclick="showPage('cart')">Cart (<span id="cartCount">0</span>)</li>
-    <li onclick="showPage('orders')">Orders</li>
-    <li onclick="showPage('career')">Career</li>
-    <li onclick="showPage('login')">Login</li>
-  </ul>
-</nav>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">🛍 SoftConsist</div>
+  <nav>
+    <span onclick="showPage('home')">Home</span>
+    <span onclick="showPage('products')">Products</span>
+    <span onclick="showPage('orders')">Orders</span>
+    <span onclick="showPage('career')">Career</span>
+    <span onclick="toggleCart()">🛒 Cart (<b id="cartCount">0</b>)</span>
+    <button onclick="openLogin()">Login</button>
+  </nav>
+</header>
 
 <!-- HOME -->
-<section id="home" class="page active">
-  <h1>Welcome to SoftConsist Store 🚀</h1>
-  <p>Best products • Fast delivery • Trusted by thousands</p>
+<section id="home" class="page active hero">
+  <h1>India’s Trusted Online Store</h1>
+  <p>Best Deals • Secure Payments • Fast Delivery</p>
+  <button onclick="showPage('products')">Shop Now</button>
 </section>
 
 <!-- PRODUCTS -->
 <section id="products" class="page">
-  <h1>🛒 Products</h1>
-  <div class="products" id="productList"></div>
-</section>
-
-<!-- CART -->
-<section id="cart" class="page">
-  <h1>🧺 Your Cart</h1>
-  <ul id="cartList"></ul>
-  <button onclick="placeOrder()">Place Order</button>
+  <h2>🔥 Trending Products</h2>
+  <div class="product-grid" id="productList"></div>
 </section>
 
 <!-- ORDERS -->
 <section id="orders" class="page">
-  <h1>📦 Orders</h1>
-  <p>Your recent orders will appear here.</p>
-</section>
-
-<!-- LOGIN -->
-<section id="login" class="page">
-  <h1>🔐 Login</h1>
-  <input placeholder="Email">
-  <input placeholder="Password" type="password">
-  <button>Login</button>
-  <p onclick="showPage('signup')" class="link">New user? Signup</p>
-</section>
-
-<!-- SIGNUP -->
-<section id="signup" class="page">
-  <h1>📝 Signup</h1>
-  <input placeholder="Name">
-  <input placeholder="Email">
-  <input placeholder="Password" type="password">
-  <button>Create Account</button>
+  <h2>📦 Your Orders</h2>
+  <p>No orders yet. Start shopping!</p>
 </section>
 
 <!-- CAREER -->
 <section id="career" class="page">
-  <h1>💼 Careers</h1>
-  <p>Join SoftConsist and build scalable products!</p>
+  <h2>💼 Careers at SoftConsist</h2>
+  <p>We’re hiring frontend, backend & DevOps engineers.</p>
+  <ul>
+    <li>✔ Competitive salary</li>
+    <li>✔ Remote-friendly</li>
+    <li>✔ Work on scalable systems</li>
+  </ul>
 </section>
+
+<!-- CART DRAWER -->
+<div id="cart" class="cart">
+  <h3>Your Cart</h3>
+  <ul id="cartItems"></ul>
+  <button onclick="placeOrder()">Place Order</button>
+</div>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+  <div class="modal-box">
+    <h3>Login</h3>
+    <input placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Login</button>
+    <p onclick="openSignup()">New user? Signup</p>
+    <span class="close" onclick="closeModal()">✖</span>
+  </div>
+</div>
+
+<!-- SIGNUP MODAL -->
+<div id="signupModal" class="modal">
+  <div class="modal-box">
+    <h3>Create Account</h3>
+    <input placeholder="Name">
+    <input placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Signup</button>
+    <span class="close" onclick="closeModal()">✖</span>
+  </div>
+</div>
 
 <script src="app.js"></script>
 </body>

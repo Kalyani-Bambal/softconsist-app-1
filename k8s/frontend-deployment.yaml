@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: softconsist-frontend
-          image: 041326371952.dkr.ecr.ap-south-1.amazonaws.com/softconsist-frontend:26c7687
+          image: 041326371952.dkr.ecr.ap-south-1.amazonaws.com/softconsist-frontend:latest
           ports:
             - containerPort: 80
               protocol: TCP
