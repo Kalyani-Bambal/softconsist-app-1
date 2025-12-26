@@ -1,69 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SoftConsist – Online Shopping</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>SoftConsist – Design Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="logo">🛒 SoftConsist</div>
-  <nav>
-    <span onclick="showPage('home')">🏠 Home</span>
-    <span onclick="showPage('products')">🛍 Products</span>
-    <span onclick="showPage('cart')">🛒 Cart (<b id="cartCount">0</b>)</span>
-    <span onclick="showPage('orders')">📦 Orders</span>
-    <span onclick="showPage('payments')">💳 Payments</span>
-    <span onclick="showPage('login')">🔐 Login</span>
-  </nav>
-</header>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">SoftConsist</div>
 
-<!-- HERO -->
-<section id="home" class="page active hero">
-  <h1>India’s Most Loved Shopping Platform ❤️</h1>
-  <p>Electronics • Fashion • Home • Beauty</p>
-  <button onclick="showPage('products')">Shop Now</button>
-</section>
+  <input class="search" placeholder="What are you looking for?" />
 
-<!-- PRODUCTS -->
-<section id="products" class="page">
-  <h2>🔥 Best Deals</h2>
-  <div class="product-grid" id="productList"></div>
-</section>
-
-<!-- CART -->
-<section id="cart" class="page">
-  <h2>🛒 Your Cart</h2>
-  <ul id="cartItems"></ul>
-  <button onclick="placeOrder()">Place Order</button>
-</section>
-
-<!-- ORDERS -->
-<section id="orders" class="page">
-  <h2>📦 Your Orders</h2>
-  <p>No orders yet.</p>
-</section>
-
-<!-- PAYMENTS -->
-<section id="payments" class="page">
-  <h2>💳 Payment Options</h2>
-  <ul>
-    <li>✔ Credit / Debit Card</li>
-    <li>✔ UPI / GPay / PhonePe</li>
-    <li>✔ Cash on Delivery</li>
+  <ul class="menu">
+    <li>Explore</li>
+    <li>Hire Talent</li>
+    <li>Get Hired</li>
+    <li>Community</li>
   </ul>
+
+  <div class="auth">
+    <button class="btn-outline">Log in</button>
+    <button class="btn-primary">Sign up</button>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<section class="profile">
+  <h1>SoftConsist Design Studio</h1>
+  <p>Bangalore, India</p>
+  <span>Product Design · UX/UI · Branding · Motion</span>
 </section>
 
-<!-- LOGIN -->
-<section id="login" class="page">
-  <h2>🔐 Login</h2>
-  <input placeholder="Email">
-  <input type="password" placeholder="Password">
-  <button>Login</button>
+<!-- FILTERS -->
+<section class="filters">
+  <button class="active">All</button>
+  <button>Web Design</button>
+  <button>Animation</button>
+  <button>Branding</button>
+  <button>Illustration</button>
+  <button>Product Design</button>
 </section>
 
-<script src="app.js"></script>
+<!-- GRID -->
+<section class="grid">
+  <div class="card">
+    <img src="https://picsum.photos/400/300?1" />
+    <div class="overlay">
+      <h3>E-Commerce Home UI</h3>
+      <p>Modern shopping experience</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/400/300?2" />
+    <div class="overlay">
+      <h3>Festival Sale Banner</h3>
+      <p>Big Billion Style Campaign</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/400/300?3" />
+    <div class="overlay">
+      <h3>Mobile App UX</h3>
+      <p>Clean, Gen-Z focused UI</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://picsum.photos/400/300?4" />
+    <div class="overlay">
+      <h3>Dashboard Design</h3>
+      <p>Dark mode fintech UI</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 SoftConsist · Design Inspired by modern marketplaces
+</footer>
+
 </body>
 </html>
 
