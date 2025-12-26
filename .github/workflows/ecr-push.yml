@@ -1,0 +1,62 @@
+name: Build and Push to ECR
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+env:
+  AWS_REGION: ap-south-1
+  AWS_ACCOUNT_ID: 041326371952
+  ECR_REGISTRY: 041326371952.dkr.ecr.ap-south-1.amazonaws.com
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Set Image Tag
+        run: echo "IMAGE_TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
+
+      # ---------- Backend ----------
+      - name: Build Backend Image
+        run: |
+          docker build -t softconsist-backend:${IMAGE_TAG} ./backend
+          docker tag softconsist-backend:${IMAGE_TAG} \
+            $ECR_REGISTRY/softconsist-backend:${IMAGE_TAG}
+          docker tag softconsist-backend:${IMAGE_TAG} \
+            $ECR_REGISTRY/softconsist-backend:latest
+
+      - name: Push Backend Image
+        run: |
+          docker push $ECR_REGISTRY/softconsist-backend:${IMAGE_TAG}
+          docker push $ECR_REGISTRY/softconsist-backend:latest
+
+      # ---------- Frontend ----------
+      - name: Build Frontend Image
+        run: |
+          docker build -t softconsist-frontend:${IMAGE_TAG} ./frontend
+          docker tag softconsist-frontend:${IMAGE_TAG} \
+            $ECR_REGISTRY/softconsist-frontend:${IMAGE_TAG}
+          docker tag softconsist-frontend:${IMAGE_TAG} \
+            $ECR_REGISTRY/softconsist-frontend:latest
+
+      - name: Push Frontend Image
+        run: |
+          docker push $ECR_REGISTRY/softconsist-frontend:${IMAGE_TAG}
+          docker push $ECR_REGISTRY/softconsist-frontend:latest
+
