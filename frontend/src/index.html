@@ -1,22 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SoftConsist Store</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>SoftConsist Product Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<h1>🛒 SoftConsist Product Store</h1>
+  <!-- Header -->
+  <header class="header">
+    <h1>🛒 SoftConsist Product Store</h1>
+    <p>Manage your products with ease</p>
+  </header>
 
-<div class="card">
-  <input id="name" placeholder="Product Name">
-  <input id="price" placeholder="Price">
-  <button onclick="addProduct()">Add Product</button>
-</div>
+  <!-- Main Container -->
+  <main class="container">
 
-<ul id="list"></ul>
+    <!-- Add Product Card -->
+    <section class="card">
+      <h2>Add New Product</h2>
 
-<script src="app.js"></script>
+      <div class="form-group">
+        <input id="name" type="text" placeholder="Product Name" />
+        <input id="price" type="number" placeholder="Price (₹)" />
+      </div>
+
+      <button class="primary-btn" onclick="addProduct()">➕ Add Product</button>
+    </section>
+
+    <!-- Product List -->
+    <section class="card">
+      <h2>Product List</h2>
+      <ul id="list" class="product-list">
+        <!-- Products will load here -->
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 SoftConsist | Built with ❤️ by DevOps Team</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+
 </body>
 </html>
+
 
